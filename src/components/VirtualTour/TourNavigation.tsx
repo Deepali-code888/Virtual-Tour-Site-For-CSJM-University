@@ -56,27 +56,27 @@ interface TourNavigationProps {
 
 export const TourNavigation = ({ activeSection, onSectionChange }: TourNavigationProps) => {
   return (
-    <div className="sticky top-4 z-40">
-      <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-medium p-6 border">
-        <div className="flex items-center gap-2 mb-6">
-          <MapPin className="text-primary" size={20} />
-          <h2 className="text-lg font-semibold">Virtual Tour Navigation</h2>
+    <div className="sticky top-4 z-40 w-full">
+      <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-medium p-4 sm:p-6 border max-w-full overflow-hidden">
+        <div className="flex items-center gap-2 mb-4 sm:mb-6 min-w-0">
+          <MapPin className="text-primary flex-shrink-0" size={20} />
+          <h2 className="text-base sm:text-lg font-semibold truncate min-w-0">Virtual Tour Navigation</h2>
         </div>
         
-        <div className="space-y-3">
+        <div className="space-y-2 sm:space-y-3">
           {tourSections.map((section) => (
             <Button
               key={section.id}
               variant={activeSection === section.id ? "default" : "ghost"}
-              className={`w-full justify-start text-left h-auto p-4 ${
+              className={`w-full justify-start text-left h-auto p-3 sm:p-4 overflow-hidden ${
                 activeSection === section.id 
                   ? "bg-primary text-primary-foreground shadow-glow" 
                   : "hover:bg-muted"
               }`}
               onClick={() => onSectionChange(section.id)}
             >
-              <div className="flex items-center gap-3 w-full">
-                <div className={`p-2 rounded-lg ${
+              <div className="flex items-start gap-2 sm:gap-3 w-full min-w-0">
+                <div className={`p-1.5 sm:p-2 rounded-lg flex-shrink-0 ${
                   activeSection === section.id 
                     ? "bg-primary-foreground/20" 
                     : "bg-primary/10"
@@ -84,17 +84,17 @@ export const TourNavigation = ({ activeSection, onSectionChange }: TourNavigatio
                   {section.icon}
                 </div>
                 
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="font-medium truncate">{section.title}</span>
+                <div className="flex-1 min-w-0 overflow-hidden">
+                  <div className="flex items-center gap-2 mb-1 min-w-0">
+                    <span className="font-medium text-sm sm:text-base truncate flex-1 min-w-0">{section.title}</span>
                     <Badge 
                       variant={activeSection === section.id ? "secondary" : "outline"}
-                      className="text-xs"
+                      className="text-xs flex-shrink-0 whitespace-nowrap"
                     >
                       {section.count}
                     </Badge>
                   </div>
-                  <p className={`text-xs leading-relaxed ${
+                  <p className={`text-xs leading-relaxed line-clamp-2 ${
                     activeSection === section.id 
                       ? "text-primary-foreground/80" 
                       : "text-muted-foreground"
@@ -104,8 +104,8 @@ export const TourNavigation = ({ activeSection, onSectionChange }: TourNavigatio
                 </div>
                 
                 <ChevronRight 
-                  size={16} 
-                  className={`transition-transform ${
+                  size={14} 
+                  className={`transition-transform flex-shrink-0 ${
                     activeSection === section.id ? "rotate-90" : ""
                   }`} 
                 />
@@ -114,8 +114,8 @@ export const TourNavigation = ({ activeSection, onSectionChange }: TourNavigatio
           ))}
         </div>
         
-        <div className="mt-6 pt-4 border-t">
-          <p className="text-xs text-muted-foreground text-center">
+        <div className="mt-4 sm:mt-6 pt-3 sm:pt-4 border-t">
+          <p className="text-xs text-muted-foreground text-center leading-relaxed">
             Click on any section to explore that area of the campus
           </p>
         </div>

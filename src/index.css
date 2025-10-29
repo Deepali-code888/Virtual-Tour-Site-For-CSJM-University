@@ -8,54 +8,54 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* University Theme Colors */
+    /* University Theme Colors - Maroon & White */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 0 85% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 0 85% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 0 85% 15%;
 
-    /* Primary: Academic Blue */
-    --primary: 210 90% 15%;
-    --primary-foreground: 210 40% 98%;
-    --primary-light: 210 85% 25%;
-    --primary-dark: 210 95% 10%;
+    /* Primary: Classic Red */
+    --primary: 0 84% 47%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 0 80% 55%;
+    --primary-dark: 0 88% 40%;
 
-    /* Secondary: Gold Accent */
-    --secondary: 45 90% 55%;
-    --secondary-foreground: 45 90% 15%;
-    --secondary-light: 45 85% 65%;
-    --secondary-dark: 45 95% 45%;
+    /* Secondary: Light Red */
+    --secondary: 0 60% 90%;
+    --secondary-foreground: 0 84% 47%;
+    --secondary-light: 0 50% 95%;
+    --secondary-dark: 0 70% 80%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 0 5% 96.1%;
+    --muted-foreground: 0 5% 46.9%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 0 5% 96.1%;
+    --accent-foreground: 0 85% 15%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 210 90% 15%;
+    --border: 0 10% 91.4%;
+    --input: 0 10% 91.4%;
+    --ring: 0 84% 47%;
 
-    /* Custom Design Tokens */
-    --university-blue: 210 90% 15%;
-    --university-gold: 45 90% 55%;
-    --university-light-blue: 210 85% 95%;
-    --hero-gradient: linear-gradient(135deg, hsl(210 90% 15%), hsl(210 85% 25%));
-    --card-gradient: linear-gradient(145deg, hsl(0 0% 100%), hsl(210 40% 98%));
-    --gold-gradient: linear-gradient(135deg, hsl(45 90% 55%), hsl(45 85% 65%));
+    /* Custom Design Tokens - Classic Red Theme */
+    --university-maroon: 0 84% 47%;
+    --university-red: 0 84% 50%;
+    --university-light-red: 0 60% 97%;
+    --hero-gradient: linear-gradient(135deg, hsl(0 84% 47%), hsl(0 80% 55%));
+    --card-gradient: linear-gradient(145deg, hsl(0 0% 100%), hsl(0 5% 98%));
+    --red-gradient: linear-gradient(135deg, hsl(0 84% 47%), hsl(0 80% 55%));
     
-    /* Shadows */
-    --shadow-soft: 0 4px 20px -4px hsl(210 90% 15% / 0.1);
-    --shadow-medium: 0 8px 30px -8px hsl(210 90% 15% / 0.15);
-    --shadow-strong: 0 20px 40px -12px hsl(210 90% 15% / 0.25);
-    --shadow-glow: 0 0 40px hsl(45 90% 55% / 0.3);
+    /* Shadows - Updated for Classic Red Theme */
+    --shadow-soft: 0 4px 20px -4px hsl(0 84% 47% / 0.1);
+    --shadow-medium: 0 8px 30px -8px hsl(0 84% 47% / 0.15);
+    --shadow-strong: 0 20px 40px -12px hsl(0 84% 47% / 0.25);
+    --shadow-glow: 0 0 40px hsl(0 84% 50% / 0.3);
 
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -199,5 +199,52 @@ All colors MUST be HSL.
   to {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+/* Line clamp utilities for text overflow */
+.line-clamp-1 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+/* Typing Animation Styles */
+.typing-text {
+  display: inline-block;
+  min-height: 1.2em;
+  overflow: visible;
+  white-space: nowrap;
+}
+
+.typing-cursor {
+  display: inline-block;
+  animation: blink 1s infinite;
+  color: hsl(var(--university-red));
+  font-weight: normal;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
   }
 }

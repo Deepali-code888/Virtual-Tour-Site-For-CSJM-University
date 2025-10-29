@@ -8,8 +8,8 @@ export const UniversityOverview = () => {
     { icon: <Users size={24} />, label: "Students", value: "150,000+" },
     { icon: <GraduationCap size={24} />, label: "Faculty", value: "800+" },
     { icon: <BookOpen size={24} />, label: "Departments", value: "15+" },
-    { icon: <Award size={24} />, label: "NAAC Grade", value: "A+" },
-    { icon: <Globe size={24} />, label: "Global Ranking", value: "Top 100" }
+    { icon: <Award size={24} />, label: "NAAC Grade", value: "A++" },
+    { icon: <Globe size={24} />, label: "India Ranking", value: "Top 100" }
   ];
 
   return (

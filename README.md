@@ -1,73 +1,112 @@
-# Welcome to your Lovable project
+# CSJMU Virtual Tour
 
-## Project info
+## About
 
-**URL**: https://lovable.dev/projects/9621f0a7-bb91-4b54-acf2-2dba71cee5b5
+An immersive virtual tour application for **Chhatrapati Shahu Ji Maharaj University (CSJMU)** built with React and modern web technologies. Explore the campus departments, facilities, and academic excellence through an interactive virtual experience.
 
-## How can I edit this code?
+## Features
 
-There are several ways of editing your application.
+- 🏛️ **Complete Campus Tour** - Explore 31+ departments and facilities
+- 🎓 **Academic Departments** - UIET Engineering, Science, Arts, Management, Law
+- 🏠 **Student Facilities** - Hostels, Libraries, Labs, Sports Complex
+- 🎨 **Modern Design** - Clean red and white CSJMU theme
+- 📱 **Responsive** - Works perfectly on all devices
+- ⚡ **Fast Loading** - Optimized for performance
+- 🔍 **Interactive** - Detailed facility information and virtual navigation
 
-**Use Lovable**
+## CSJMU Departments Included
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/9621f0a7-bb91-4b54-acf2-2dba71cee5b5) and start prompting.
+### Engineering & Technology (UIET)
+- Computer Science & AI
+- Electronics & Communication
+- Chemical & Mechanical Engineering
+- Information Technology
+- Material Science & Metallurgy
 
-Changes made via Lovable will be committed automatically to this repo.
+### Academic Schools
+- School of Education
+- School of Advanced Agricultural Sciences
+- School of Computer Applications
+- Department of Biological Sciences & Biotechnology
+- Business Management Department
 
-**Use your preferred IDE**
+### Specialized Facilities
+- Central Library, Stadium, Innovation Foundation
+- Virangna Rani Lakshmi Bai Auditorium
+- Law Building (Atal Bihari Vajpayee)
+- Health Sciences, Hotel Management
+- International Center, Research Centers
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Quick Start
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+```bash
+# Install dependencies
+npm install
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
 npm run dev
+
+# Open http://localhost:5173
 ```
 
-**Edit a file directly in GitHub**
+## Tech Stack
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- **React 18** with TypeScript
+- **Vite** for fast development
+- **Tailwind CSS** for styling
+- **Shadcn/UI** components
+- **Custom CSJMU branding**
 
-**Use GitHub Codespaces**
+---
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+**© 2025 CSJMU Virtual Tour** | Built for Chhatrapati Shahu Ji Maharaj University
+  lib/              # Utility functions
+```
 
-## What technologies are used for this project?
+### Adding Building Photos
+
+To add your own building photos:
+
+1. Place images in `src/assets/buildings/`
+2. Update imports in `src/components/VirtualTour/BuildingsSection.tsx`
+3. Follow the naming convention in the buildings README
+
+## Technologies Used
 
 This project is built with:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- **Vite** - Fast build tool and development server
+- **TypeScript** - Type-safe JavaScript
+- **React** - UI library
+- **shadcn/ui** - Component library
+- **Tailwind CSS** - Utility-first CSS framework
+- **Lucide React** - Icon library
 
-## How can I deploy this project?
+## Deployment
 
-Simply open [Lovable](https://lovable.dev/projects/9621f0a7-bb91-4b54-acf2-2dba71cee5b5) and click on Share -> Publish.
+### Build for Production
 
-## Can I connect a custom domain to my Lovable project?
+```sh
+npm run build
+```
 
-Yes, you can!
+### Deploy to Static Hosting
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+The built files in the `dist/` folder can be deployed to any static hosting service like:
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+- Vercel
+- Netlify
+- GitHub Pages
+- AWS S3
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+## License
+
+This project is licensed under the MIT License.

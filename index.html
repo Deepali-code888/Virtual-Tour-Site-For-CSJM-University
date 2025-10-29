@@ -3,6 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self'; font-src 'self'; object-src 'none'; media-src 'self'; frame-src 'none';" />
+    
+  <!-- CSJMU Favicon (primary PNG + fallback .ico) -->
+  <!-- Use the source PNG explicitly (transparent background) for modern browsers -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/csjmu-logo.png" />
+  <!-- Keep legacy favicon.ico for older browsers that still request /favicon.ico -->
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    
     <title>CSJMU Virtual Tour - Chhatrapati Shahu Ji Maharaj University</title>
     <meta name="description" content="Explore CSJMU campus through an immersive virtual tour. Discover academic departments, modern facilities, and vibrant campus life at Chhatrapati Shahu Ji Maharaj University, Kanpur." />
     <meta name="author" content="CSJMU Virtual Tour" />
@@ -11,14 +27,83 @@
     <meta property="og:title" content="CSJMU Virtual Tour - Explore Our Campus Online" />
     <meta property="og:description" content="Take a virtual journey through CSJMU's prestigious campus. Discover our academic excellence, world-class facilities, and vibrant student life." />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta property="og:image" content="src\assets\uiet-campus-1.jpg" />
   </head>
 
   <body>
+    <script>
+    
+      (function() {
+        'use strict';
+        
+        const blockList = [
+          'lovable', 'Lovable', 'LOVABLE',
+          'widget', 'Widget', 'WIDGET',
+          'tracker', 'analytics', 'gtag', 'ga'
+        ];
+        
+        blockList.forEach(name => {
+          Object.defineProperty(window, name, {
+            value: null,
+            writable: false,
+            configurable: false
+          });
+        });
+        
+        // Override common injection methods
+        const originalAppendChild = Node.prototype.appendChild;
+        const originalInsertBefore = Node.prototype.insertBefore;
+        
+        Node.prototype.appendChild = function(child) {
+          if (child.tagName === 'SCRIPT' && 
+              (child.src && (child.src.includes('lovable') || 
+                             child.src.includes('widget') ||
+                             child.src.includes('analytics')))) {
+            console.log('Blocked external script:', child.src);
+            return child;
+          }
+          return originalAppendChild.call(this, child);
+        };
+        
+        Node.prototype.insertBefore = function(newNode, referenceNode) {
+          if (newNode.tagName === 'SCRIPT' && 
+              (newNode.src && (newNode.src.includes('lovable') || 
+                               newNode.src.includes('widget') ||
+                               newNode.src.includes('analytics')))) {
+            console.log('Blocked external script:', newNode.src);
+            return newNode;
+          }
+          return originalInsertBefore.call(this, newNode, referenceNode);
+        };
+        
+        // Remove any data attributes that might trigger external widgets
+        const observer = new MutationObserver(function(mutations) {
+          mutations.forEach(function(mutation) {
+            mutation.addedNodes.forEach(function(node) {
+              if (node.nodeType === 1) { // Element node
+                const attrs = node.attributes;
+                if (attrs) {
+                  for (let i = attrs.length - 1; i >= 0; i--) {
+                    const attr = attrs[i];
+                    if (attr.name.includes('lovable') || 
+                        attr.name.includes('widget') ||
+                        attr.name.includes('data-id')) {
+                      node.removeAttribute(attr.name);
+                    }
+                  }
+                }
+              }
+            });
+          });
+        });
+        
+        observer.observe(document.body || document.documentElement, {
+          childList: true,
+          subtree: true,
+          attributes: true
+        });
+      })();
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

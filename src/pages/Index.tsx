@@ -71,9 +71,9 @@ const Index = () => {
       {/* Main Content */}
       <div id="tour-sections" className="relative">
         <div className="container mx-auto px-4 py-8">
-          <div className="flex gap-8">
+          <div className="flex gap-6 lg:gap-8">
             {/* Navigation Sidebar */}
-            <div className="hidden lg:block w-80 flex-shrink-0">
+            <div className="hidden lg:block w-72 xl:w-80 flex-shrink-0">
               <TourNavigation 
                 activeSection={activeSection}
                 onSectionChange={handleSectionChange}
@@ -81,7 +81,7 @@ const Index = () => {
             </div>
             
             {/* Content Area */}
-            <div className="flex-1 min-w-0">
+            <div className="flex-1 min-w-0 overflow-hidden">
               <div id="overview" className="mb-20">
                 <UniversityOverview />
               </div>
@@ -161,11 +161,13 @@ const Index = () => {
       
       {/* Mobile Navigation */}
       <div className="lg:hidden fixed bottom-4 left-4 right-4 z-40">
-        <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-strong p-4">
-          <TourNavigation 
-            activeSection={activeSection}
-            onSectionChange={handleSectionChange}
-          />
+        <div className="max-w-sm mx-auto">
+          <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-strong p-3 border overflow-hidden">
+            <TourNavigation 
+              activeSection={activeSection}
+              onSectionChange={handleSectionChange}
+            />
+          </div>
         </div>
       </div>
     </div>
