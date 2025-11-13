@@ -1,14 +1,17 @@
 import { DepartmentCard } from "./DepartmentCard";
 import academicBuilding from "@/assets/academic-building.jpg";
-import libraryInterior from "@/assets/library-interior.jpg";
-import scienceLab from "@/assets/science-lab.jpg";
+import SchoolOfBusinessManagement from "@/assets/School-of-Business-Management.jpg";
+import libraryInterior from "@/assets/library.jpeg";
+import atalbihari from "@/assets/AtalBihariLegalStudy.jpg";
+import DepartmentOfBSBT from "@/assets/Dept-of-BSBT.jpg";
+import DepartmentofEngineering from "@/assets/uiet-campus-1.jpg";
 
 export const DepartmentsSection = () => {
   const departments = [
     {
       name: "School of Engineering & Technology (UIET)",
       description: "A premier engineering institution offering cutting-edge programs in Computer Science, Electronics, Mechanical, and Civil Engineering. Our faculty comprises renowned researchers and industry experts.",
-      image: scienceLab,
+      image: DepartmentofEngineering,
       faculty: 120,
       courses: ["B.Tech", "M.Tech", "PhD", "Integrated Programs"],
       achievements: [
@@ -23,7 +26,7 @@ export const DepartmentsSection = () => {
     {
       name: "School of Business Management",
       description: "Nurturing future business leaders through comprehensive management education, case-based learning, and industry exposure. Our MBA program is recognized among the top in the region.",
-      image: academicBuilding,
+      image: SchoolOfBusinessManagement,
       faculty: 45,
       courses: ["MBA", "PGDM", "Executive MBA", "PhD in Management"],
       achievements: [
@@ -38,7 +41,7 @@ export const DepartmentsSection = () => {
     {
       name: "School of Life Sciences & Biotechnology",
       description: "Advancing scientific research in life sciences with modern laboratories and research facilities. Our programs integrate theoretical knowledge with practical applications.",
-      image: scienceLab,
+      image: DepartmentOfBSBT,
       faculty: 60,
       courses: ["B.Sc", "M.Sc", "PhD", "Integrated M.Sc"],
       achievements: [
@@ -53,7 +56,7 @@ export const DepartmentsSection = () => {
     {
       name: "Atal Bihari Vajpayee School of Legal Studies",
       description: "Providing comprehensive legal education with emphasis on constitutional law, corporate law, and human rights. Our graduates excel in legal practice and judiciary.",
-      image: libraryInterior,
+      image: atalbihari,
       faculty: 35,
       courses: ["LLB", "LLM", "BA LLB", "PhD in Law"],
       achievements: [
@@ -82,7 +85,7 @@ export const DepartmentsSection = () => {
     {
       name: "School of Pharmaceutical Sciences",
       description: "Leading pharmaceutical education and research with modern laboratories and industry collaborations. Our graduates contribute significantly to the healthcare sector.",
-      image: scienceLab,
+      image: DepartmentOfBSBT,
       faculty: 50,
       courses: ["B.Pharm", "M.Pharm", "PharmD", "PhD"],
       achievements: [

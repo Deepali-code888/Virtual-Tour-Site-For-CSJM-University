@@ -1,9 +1,17 @@
 import { BuildingCard } from "./BuildingCard";
 // Import existing placeholder images (you can replace these with your own photos)
 import academicBuilding from "@/assets/academic-building.jpg";
-import libraryInterior from "@/assets/library-interior.jpg";
+import AcademicBuilding from "@/assets/Multipurpose-Hall.jpg";
+import AHS from "@/assets/AHS.jpg";
+import finearts from "@/assets/finearts.jpg";
+import InternationalCenter from "@/assets/International-Centre.png";
+
+
+import libraryInterior from "@/assets/library.jpeg";
 import scienceLab from "@/assets/science-lab.jpg";
-import campusHero from "@/assets/campus-hero.jpg";
+import campusHero from "@/assets/Boys-Hostel-1.jpg";
+import CampusHero from "@/assets/helipad2.jpeg";
+// import  from "@/assets/campus-hero.jpg";
 
 // TODO: Replace these imports with your own building photos
 // See README-FACILITIES.md for detailed instructions on adding new facilities
@@ -360,7 +368,7 @@ export const BuildingsSection = () => {
     {
       name: "Law Building (Atal Bihari Vajpayee)",
       description: "Modern law faculty building with moot courts, library, and legal research centers.",
-      image: academicBuilding,
+      image: AHS,
       facilities: [
         "Moot court halls",
         "Law library",
@@ -413,7 +421,7 @@ export const BuildingsSection = () => {
     {
       name: "Helipad",
       description: "Emergency and official helicopter landing facility for quick transportation and emergency services.",
-      image: campusHero,
+      image: CampusHero,
       facilities: [
         "Landing platform",
         "Safety equipment",
@@ -498,7 +506,7 @@ export const BuildingsSection = () => {
     {
       name: "International Center",
       description: "Hub for international collaborations, student exchanges, and global partnerships.",
-      image: academicBuilding,
+      image: InternationalCenter,
       facilities: [
         "Conference rooms",
         "International student services",
@@ -515,7 +523,7 @@ export const BuildingsSection = () => {
     {
       name: "Multipurpose Hall",
       description: "Versatile facility for various events, examinations, and large gatherings.",
-      image: academicBuilding,
+      image: AcademicBuilding,
       facilities: [
         "Main hall",
         "Flexible seating",
